@@ -2,33 +2,31 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
 
 func main() {
-	// greeting := "hello there friends!"
+	// x := 0
+	// for x < 5 {
+	// 	fmt.Println("value of x is:", x)
+	// 	x++
+	// }
+	
+	// for i := 0; i < 5; i++ {
+	// 	fmt.Println("value of i is:", i)
+	// }
 
-	// fmt.Println(strings.Contains(greeting, "hello!"))
-	// fmt.Println(strings.ReplaceAll(greeting, "hello", "hi"))
-	// fmt.Println(strings.ToUpper(greeting))
-	// fmt.Println(strings.Index(greeting, "th"))
-	// fmt.Println(strings.Split(greeting, " "))
+	names := []string{"mario", "luigi", "yoshi", "peach"}
 
-	// the original value is unchanged
-	// fmt.Println("original string value =", greeting)
+	// for i := 0; i < len(names); i++ {
+	// 	fmt.Println(names[i])
+	// }
 
-	ages := []int{45, 20, 35, 30, 75, 60, 50, 25}
+	for _, value := range names {
+		fmt.Printf("the value is %v \n", value)
+		value = "new string"
+		// value does not alter the original slice because it acts like a local copy 
+		// of the variable
+	}
 
-	sort.Ints(ages)
-	fmt.Println(ages)
-
-	index := sort.SearchInts(ages, 30)
-	fmt.Println(index)
-
-	names := []string{"yoshi", "mario", "peach", "bowser", "luigi"}
-
-	sort.Strings(names)
 	fmt.Println(names)
-
-	fmt.Println(sort.SearchStrings(names, "bowser"))
 }
